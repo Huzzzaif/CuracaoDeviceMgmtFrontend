@@ -1,0 +1,36 @@
+ion-content {
+  --background: #cfd7be;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.login-image {
+  display: block; /* changed from flex to block */
+  margin: auto; /* Centers the image horizontally in its container */
+  width: 60px;
+  height: auto;
+}
+.recover-button {
+  text-transform: initial;
+}
+
+.login-button {
+  --background: #92c039;
+  --background-activated: #3d533a;
+  padding-top: 10%;
+  
+}
+
+.register-button {
+  color: #92c039;
+  padding-top: 10%;
+}
+
+
+.wrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

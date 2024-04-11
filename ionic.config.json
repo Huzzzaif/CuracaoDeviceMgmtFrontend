@@ -1,0 +1,9 @@
+{
+  "name": "ionic_vue_frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+
+  
+}
