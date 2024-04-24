@@ -80,7 +80,7 @@ import { useRouter } from "vue-router";
 import { useCookies } from "@vueuse/integrations/useCookies";
 import "../styles/login.css";
 
-const bypassLoginForTesting = true;
+const bypassLoginForTesting = false;
 const email = ref("");
 const password = ref("");
 const router = useRouter();
@@ -118,7 +118,7 @@ function login() {
     password: password.value,
   };
   axios
-    .post("http://localhost:8000/auth/login/", data)
+    .post("https://curacaodevicemgmt-test.azurewebsites.net/auth/login/", data)
     .then((response) => {
       console.log("Login successful:", response.data);
       const Token = response.data.token;
@@ -126,7 +126,7 @@ function login() {
       
       // Fetch user role based on email and id
       axios
-        .get(`http://localhost:8000/signup/?email=${email.value}`)
+        .get(`https://curacaodevicemgmt-test.azurewebsites.net/signup/?email=${email.value}`)
         .then((userResponse) => {
           if (userResponse.data.role === 'admin') {
             router.push("/AdminTabs/users");

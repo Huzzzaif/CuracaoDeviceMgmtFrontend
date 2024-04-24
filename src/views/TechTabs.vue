@@ -19,7 +19,7 @@
             <ion-label>Devices</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="devices" href="/DevTabs/Transactions">
+          <ion-tab-button tab="transactions" href="/TechTabs/Transactions">
             <ion-icon aria-hidden="true" :icon="desktopOutline" />
             <ion-label>Transaction Logs</ion-label>
           </ion-tab-button>

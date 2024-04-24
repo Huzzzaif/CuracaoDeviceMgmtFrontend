@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-      <PageNameLogoHeader page-name="Devices" />
+      <PageNameLogoHeader page-name="Transactions" />
       <ion-content>
         <ion-grid :fixed="true">
   

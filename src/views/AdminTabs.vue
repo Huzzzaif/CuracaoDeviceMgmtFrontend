@@ -24,12 +24,12 @@
             <ion-label>Devices</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="devices" href="/DevTabs/ImportDevices">
+          <ion-tab-button tab="importdevices" href="/AdminTabs/ImportDevices">
             <ion-icon aria-hidden="true" :icon="desktopOutline" />
             <ion-label>Import Devices</ion-label>
           </ion-tab-button>
 
-          <ion-tab-button tab="devices" href="/DevTabs/Transactions">
+          <ion-tab-button tab="transactions" href="/AdminTabs/Transactions">
             <ion-icon aria-hidden="true" :icon="desktopOutline" />
             <ion-label>Transaction Logs</ion-label>
           </ion-tab-button>

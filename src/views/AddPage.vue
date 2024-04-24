@@ -33,7 +33,7 @@ async function AddDevice() {
       ip: addPageChildComponent.value.ipAddress,
       labelid: addPageChildComponent.value.itLabelID,
       itassetid: parseInt(addPageChildComponent.value.itAssetID),
-      //notes: addPageChildComponent.value.notes,
+      notes: addPageChildComponent.value.notes,
       status: addPageChildComponent.value.status[0],
       statusnotes: addPageChildComponent.value.statusNotes
     })
