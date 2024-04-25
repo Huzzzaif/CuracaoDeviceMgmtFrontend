@@ -24,7 +24,9 @@
                 :class="{ 'is-invalid': emailError }"
                 @change="validateEmail"
               ></ion-input>
-              <ion-text color="danger" v-if="emailError" class="wrap-text">{{ emailError }}</ion-text>
+              <ion-text color="danger" v-if="emailError" class="wrap-text">{{
+                emailError
+              }}</ion-text>
             </ion-item>
 
             <ion-item>
@@ -37,7 +39,9 @@
                 :class="{ 'is-invalid': passwordError }"
                 @change="validatePassword"
               ></ion-input>
-              <ion-text color="danger" v-if="passwordError" class="wrap-text">{{ passwordError }}</ion-text>
+              <ion-text color="danger" v-if="passwordError" class="wrap-text">{{
+                passwordError
+              }}</ion-text>
             </ion-item>
 
             <ion-item>
@@ -50,7 +54,12 @@
                 :class="{ 'is-invalid': reenterPasswordError }"
                 @change="validateReenterPassword"
               ></ion-input>
-              <ion-text color="danger" v-if="reenterPasswordError" class="wrap-text">{{ reenterPasswordError }}</ion-text>
+              <ion-text
+                color="danger"
+                v-if="reenterPasswordError"
+                class="wrap-text"
+                >{{ reenterPasswordError }}</ion-text
+              >
             </ion-item>
 
             <ion-item>
@@ -59,16 +68,29 @@
                 label="Select an option"
                 label-placement="floating"
                 :class="{ 'is-invalid': dropdownError }"
-                @ionChange="dropdown_value = $event.detail.value; validateDropdown()"
+                @ionChange="
+                  dropdown_value = $event.detail.value;
+                  validateDropdown();
+                "
               >
-                <ion-select-option value="developer">Developer</ion-select-option>
+                <ion-select-option value="developer"
+                  >Developer</ion-select-option
+                >
                 <ion-select-option value="admin">Admin</ion-select-option>
-                <ion-select-option value="technician">Technician</ion-select-option>
+                <ion-select-option value="technician"
+                  >Technician</ion-select-option
+                >
               </ion-select>
-              <ion-text color="danger" v-if="dropdownError" class="wrap-text">{{ dropdownError }}</ion-text>
+              <ion-text color="danger" v-if="dropdownError" class="wrap-text">{{
+                dropdownError
+              }}</ion-text>
             </ion-item>
 
-            <ion-button class="login-button" size="default" @click="register" :disabled="!isFormValid()"
+            <ion-button
+              class="login-button"
+              size="default"
+              @click="register"
+              :disabled="!isFormValid()"
               >REGISTER</ion-button
             >
           </ion-card-content>
@@ -79,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref , computed } from "vue";
+import { ref, computed } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { useCookies } from "@vueuse/integrations/useCookies";
@@ -148,7 +170,16 @@ function validateDropdown() {
 }
 
 function isFormValid() {
-  return email.value && password.value && reenter_password.value && dropdown_value.value && !emailError.value && !passwordError.value && !reenterPasswordError.value && !dropdownError.value;
+  return (
+    email.value &&
+    password.value &&
+    reenter_password.value &&
+    dropdown_value.value &&
+    !emailError.value &&
+    !passwordError.value &&
+    !reenterPasswordError.value &&
+    !dropdownError.value
+  );
 }
 
 async function register() {
@@ -158,7 +189,7 @@ async function register() {
 
   try {
     const response = await axios.post(
-      "http://localhost:8000/signup/",
+      "https://curacaodevicemgmt-test.azurewebsites.net/signup/",
       {
         email: email.value,
         password: password.value,
@@ -173,4 +204,3 @@ async function register() {
   }
 }
 </script>
-

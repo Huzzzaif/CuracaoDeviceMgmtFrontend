@@ -26,7 +26,7 @@
           </ion-col>
         </ion-row>
 
-        <SaveCancelButtons @on-save="addDepartment" />
+        <SaveCancelButtons @on-save="AddDepartmment" />
       </ion-grid>
     </ion-content>
   </ion-page>
@@ -62,7 +62,7 @@ async function AddDepartmment() {
   await loading.present();
   try {
     const response = await getDjangoAPI.post("/departments/", {
-      name: departmentName.value,
+      department: departmentName.value,
       status: departmentStatus.value.slice(0, 1),
     });
 

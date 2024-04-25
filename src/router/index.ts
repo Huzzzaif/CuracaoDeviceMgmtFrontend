@@ -71,7 +71,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "users", //show the list of users
-        component: () => import("@/views/UsersPage.vue"), // Corrected the file name casing
+        component: () => import("@/views/UserRegisteration.vue"), // Corrected the file name casing
       },
       {
         path: "/register", //make new users
