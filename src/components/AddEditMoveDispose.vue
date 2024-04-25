@@ -215,7 +215,7 @@ defineExpose({
   mid,
   tid,
   store,
-  location,
+  //location,
   department,
   pStation,
   register,

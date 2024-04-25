@@ -7,13 +7,6 @@
           <ion-col>
             <ion-input
               class="ion-margin-vertical"
-              label="LOCATION ID"
-              fill="outline"
-              placeholder="Enter the location ID"
-              v-model="locationId"
-            />
-            <ion-input
-              class="ion-margin-vertical"
               label="NAME"
               fill="outline"
               placeholder="Enter the location name"
@@ -74,7 +67,6 @@ import { ref } from "vue";
 import { getDjangoAPI } from "../axios";
 
 // Reactive references for form fields
-const locationId = ref("");
 const locationName = ref("");
 const locationStatus = ref("");
 async function AddLocation() {
@@ -84,7 +76,6 @@ async function AddLocation() {
   await loading.present();
   try {
     const response = await getDjangoAPI.post("/locations/", {
-      location_id: locationId.value,
       name: locationName.value,
       status: locationStatus.value.slice(0, 1),
     });
@@ -97,7 +88,6 @@ async function AddLocation() {
       });
       toast.present();
       // Reset the form fields here
-      locationId.value = "";
       locationName.value = "";
       locationStatus.value = "";
     } else {
@@ -110,14 +100,15 @@ async function AddLocation() {
       toast.present();
     }
   } catch (error) {
-    await loading.dismiss();
+    console.error(error);
     const toast = await toastController.create({
       message: "An error occurred while saving the location",
       duration: 2000,
       color: "danger",
     });
     toast.present();
-    console.error(error);
+  } finally {
+    await loading.dismiss();
   }
 }
 </script>
